@@ -41,7 +41,9 @@ Vanilla는 JavaScript의 한 종류로, 브라우저를 통해 제공된 JavaScr
 Vanilla JS 정말 못생겼다. 하지만, 그걸 모두 바꾸려면 엑박천지가 뜰 것이다. 새로운 것으로 대체할 수 있는 것이 아닌 핵심을 배우기 위해서는 Vanilla JS를 배워야 한다. 이유는? JavaScript에 재능있는 사람을 찾을 수 없기 때문이다. React나 jQuery를 아는 사람은 찾기 쉽고, Library, Framework를 아는 사람은 찾기 쉽다.
 
 예를 들어, 포토샵을 잘 다루지만, 색감에 센스가 없거나, 색의 구성도 모르고 멋진 사진이 뭔지 감각이 없는 사람처럼 JavaScript를 제대로 모르고 사용한다는 건 있어서는 안된다.
+![화면 캡처 2021-02-06 000510](https://user-images.githubusercontent.com/71870567/107051338-b0816400-680f-11eb-8e84-7d9bb4e23c74.png)
 
+위 사진은 Vanilla JS코드의 기본 문법과 처리하는 속도를 나타낸다. 120만개가 넘는 Operation을 1초에 수행할 수 있다. Vanilla JS를 배운다는 것은 웹에서의 기초가 되는 언어를 배우는 것이다.
 
 
 
