@@ -1,4 +1,5 @@
 아래는 Nomad Coders의 '[바닐라 JS로 크롬 앱 만들기](https://nomadcoders.co/javascript-for-beginners/lobby)' 강의를 듣고 정리한 내용이다. 
+<br>
 
 ## 왜 JavaScript인가?
 #### 웹에 쓰이는 유일한 프로그래밍 언어이다. 
@@ -24,7 +25,7 @@
 - 만들고 다른 언어로 교체하지 않았다.
 - 모든 컴퓨터에는 기본적으로 브라우저를 사용하고 있고, 브라우저는 JavaScript로 돌아간다. 즉, 모든 컴퓨터에서 JavaScript를 사용할 수 있다. 이는 모든 컴퓨터가 이 언어를 이해한다는 것을 뜻한다.
 - 위는 별도의 행위를 하지 않아도 JavaScript를 사용할 수 있다는 것을 뜻한다.
-
+<br>
 
 ## JavaScript 버전
 JavsScript는 언어이고, ECMAScript는 Specification을 의미한다. JavaScript의 Specification에 대한 업데이트가 이루어지면서 버전이 존재한다. [[더 알아보기]](https://developer.mozilla.org/ko/docs/Web/JavaScript/%EC%96%B8%EC%96%B4_%EB%A6%AC%EC%86%8C%EC%8A%A4)
@@ -33,6 +34,9 @@ JavsScript는 언어이고, ECMAScript는 Specification을 의미한다. JavaScr
 
 JavaScript는 중앙집중화(Centralization)이 되어있어, 누군가 업데이트를 할 경우 모든 브라우저에 적용된다. 모든 브라우저는 이 Specification을 받아 각자의 방식으로 실행하여 같은 결과를 이루려고 한다. (브라우저마다 다른 버전의 ES를 지원한다.) 
 ES5, ES6보다 일반적인 JavaScript가 중요하기에 이것에 대해 먼저 배울 것이다.
+<br><br>
+
+
 
 ## Vanilla JS
 Vanilla는 JavaScript의 한 종류로, 브라우저를 통해 제공된 JavaScript를 의미한다. Libarary와 Framework가 전혀없는 JavaScript를 의미한다.
