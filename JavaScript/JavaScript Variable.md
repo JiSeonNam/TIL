@@ -65,12 +65,16 @@ function test(){
 test();
 ```
 
+[[참고] var를 사용할 때 발생하는 문제들](https://www.daleseo.com/js-var-issues/)
+
+
 ## 데이터타입(Data Type)
 #### 주석 
 ```
 //한 줄로 주석을 달고 싶을 때 사용한다.
 /*
-  여러 줄 주석을 달고 싶을 때 사용한다.
+  여러 줄로 
+  주석을 달고 싶을 때 사용한다.
 */
 const number = 10;
 ```
