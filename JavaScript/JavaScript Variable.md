@@ -1,3 +1,5 @@
+아래는 Nomad Coders의 '[바닐라 JS로 크롬 앱 만들기](https://nomadcoders.co/javascript-for-beginners/lobby)' 강의를 듣고 정리한 내용이다. 
+
 ## Variable(변수)
 변경되거나 변경될 수 있는 것으로, 가변적이다. 
 
