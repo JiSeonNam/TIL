@@ -1,20 +1,20 @@
 아래는 Nomad Coders의 '[바닐라 JS로 크롬 앱 만들기](https://nomadcoders.co/javascript-for-beginners/lobby)' 강의를 듣고 정리한 내용이다. 
 
-## Variable(변수)
+# Variable(변수)
 변경되거나 변경될 수 있는 것으로, 가변적이다. 
 
-#### JavaScript 변수 기본문법
+### JavaScript 변수 기본문법
 1. 문법은 한 줄에 하나씩 서술한다.
 1. 문법이 끝나면 ;(세미콜론) 부호를 넣어준다.
 1. 변수 시작에 let을 넣는다. (변수의 종류가 두 가지라 이를 구분하기 위해 사용한다.)
 1. JavaScript는 위에서 아래로 순서대로 실행한다.
 
-#### 변수가 적용되는 순서
+### 변수가 적용되는 순서
 1. 변수생성
 1. 초기화
 1. 사용
 
-#### let, const, var?
+### let, const, var?
 >let : 새로운 값으로 바꿀 수 있다. 단, 변수 선언은 한 번만 가능하다.
 ```
 let name = 'haha';
@@ -50,7 +50,7 @@ undefined
 ```
 <br>
 
-## 변수 Hoisting
+# 변수 Hoisting
 Hoisting이란 var를 사용하여 변수를 선언할 때, 해당 변수가 속한 범위(scope)를 최상단으로 올려버리는 현상을 말한다. 
 <strong>여기서 말하는 범위(scope)란 block 레벨이 아닌 함수(function) 레벨을 뜻하며, 함수 내에서 선언된 변수는 함수 블록 내에서만 유효하고, 함수 외부에서는 유효하지 않는다는 것을 말한다.</strong> 
 즉, 참조할 수 없다.
@@ -70,8 +70,8 @@ test();
 <br>
 
 
-## 데이터타입(Data Type)
-#### 주석 
+# 데이터타입(Data Type)
+### 주석 
 ```
 //한 줄로 주석을 달고 싶을 때 사용한다.
 /*
@@ -81,27 +81,27 @@ test();
 const number = 10;
 ```
 
-#### String
+### String
 Text String을 의미하며, 변수 선언 시에 " " 안에 값을 넣는다. 이모티콘, 숫자, 글자 등을 넣을 수 있으며 모두 텍스트로 인식한다.
 ```
 const name = "namji"; 
 const emotion = "🤦‍♂️";
 ```
 
-#### Boolean
+### Boolean
 참과 거짓을 이진법으로 나타나며, true(0)/false(1)로 정의한다.
 ```
 const what = true;
 const what = false;
 ```
 
-#### float
+### float
 소수점 숫자(floating number)를 뜻한다.
 ```
 const height = 163.2;
 ```
 
-#### Number
+### Number
 정수(Integer)와 소수점 숫자를 모두 표현할 수 있다.
 ```
 const age = 33;
@@ -109,8 +109,8 @@ const age = 33;
 
 <br>
 
-## 데이터타입 정렬하기(Organizing Data with Arrays)
-#### Array
+# 데이터타입 정렬하기(Organizing Data with Arrays)
+### Array
 데이터를 List처럼 저장하는 것으로, 여러 String을 묶어서 사용한다. DB에서 가져온 List 데이터의 경우 주로 사용한다. 
 - 타입 : String, Boolean, float, Number 사용 가능
 - 데이터 넣는 방법 : 데이터를 [] 부호로 감싼다. 변수 안에 변수를 넣을 수 있다.
@@ -123,7 +123,7 @@ console.log(daysOfWeek[2]); // Wed
 console.log(daysOfWeek[234]); //undefined, Array에 정의되지 않는 데이터에 접근 할 경우 undefined가 나온다
 ```
 
-#### Object
+### Object
 Array와 다른점은 각 value에 이름을 지정할 수 있다. 만약 데이터를 합쳐서 만들어야 할 경우, Object를 이용해 만든 뒤 Array에 넣어서 사용할 수 있다.
 - 타입 : String, Boolean, float, Number 사용 가능
 - 데이터 넣는 방법 : 데이터를 {} 부호로 감싼다. 여러 데이터를 넣을 경우 반드시 ,(콤마)를 확인하고, String 데이터형은 " "로 감싼다.
@@ -144,7 +144,7 @@ console.log(Info.favFood[0].name); //Pizza
 ```
 <br>
 
-## Camel Case(카멜케이스)
+# Camel Case(카멜케이스)
 낙타 등처럼 중간에 튀어나온 것에 따온 것으로, 글자 중간에 대문자를 이용하여 알아보기 쉽게 나타내는 것을 말한다. 기본적으로 변수는 띄어쓰기와 특수문자를 사용할 수 없으므로, 대문자를 이용한다.
 - 소문자로 시작한다.
 - 중간에 스페이스가 필요 할 경우 대문자를 사용한다.
