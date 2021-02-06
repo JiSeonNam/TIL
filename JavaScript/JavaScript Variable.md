@@ -65,7 +65,7 @@ function test(){
 test();
 ```
 
-## Data Type
+## 데이터타입(Data Type)
 #### 주석 
 ```
 //한 줄로 주석을 달고 싶을 때 사용한다.
@@ -78,7 +78,7 @@ const number = 10;
 #### String
 Text String을 의미하며, 변수 선언 시에 " " 안에 값을 넣는다. 이모티콘, 숫자, 글자 등을 넣을 수 있으며 모두 텍스트로 인식한다.
 ```
-const name = "namji";
+const name = "namji"; 
 const emotion = "🤦‍♂️";
 ```
 
@@ -97,3 +97,49 @@ const height = 163.2;
 
 #### Number
 정수(Integer)와 소수점 숫자를 모두 표현할 수 있다.
+```
+const age = 33;
+```
+
+## 데이터타입 정렬하기(Organizing Data with Arrays)
+#### Array
+데이터를 List처럼 저장하는 것으로, 여러 String을 묶어서 사용한다. DB에서 가져온 List 데이터의 경우 주로 사용한다. 
+- 타입 : String, Boolean, float, Number 사용 가능
+- 데이터 넣는 방법 : 데이터를 [] 부호로 감싼다. 변수 안에 변수를 넣을 수 있다.
+- 데이터 접근 방법 : 변수명[index번호] / index로 접근할 수 있으며, index는 0부터 시작한다.
+```
+const someting = "무엇";
+const daysOfWeek = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun",something];
+console.log(daysOfWeek); //[ 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun','something' ]
+console.log(daysOfWeek[2]); // Wed
+console.log(daysOfWeek[234]); //undefined, Array에 정의되지 않는 데이터에 접근 할 경우 undefined가 나온다
+```
+
+#### Object
+Array와 다른점은 각 value에 이름을 지정할 수 있다. 만약 데이터를 합쳐서 만들어야 할 경우, Object를 이용해 만든 뒤 Array에 넣어서 사용할 수 있다.
+- 타입 : String, Boolean, float, Number 사용 가능
+- 데이터 넣는 방법 : 데이터를 {} 부호로 감싼다. 여러 데이터를 넣을 경우 반드시 ,(콤마)를 확인하고, String 데이터형은 " "로 감싼다.
+- 데이터 접근 방법 : 변수명.key값[index번호].key값...
+```
+const Info = {
+  name:"namjiseon",
+  age:34,
+  gender:"female",
+  favMovies:["AirForceOne","FrisonBreak"],
+  favFood:[{name:"Pizza",fatty:true},{name:"Kimchizzun",fatty:false}]
+}
+console.log(Info);
+console.log(Info.name); //namjiseon
+console.log(Info.favMovies[1]); //FrisonBreak
+console.log(Info.favFood[0]); //{ name: 'Pizza', fatty: true }
+console.log(Info.favFood[0].name); //Pizza
+```
+
+## Camel Case(카멜케이스)
+낙타 등처럼 중간에 튀어나온 것에 따온 것으로, 글자 중간에 대문자를 이용하여 알아보기 쉽게 나타내는 것을 말한다. 기본적으로 변수는 띄어쓰기와 특수문자를 사용할 수 없으므로, 대문자를 이용한다.
+- 소문자로 시작한다.
+- 중간에 스페이스가 필요 할 경우 대문자를 사용한다.
+```
+const daysOfWeek = "AllDay";
+const bookList = ["English","TOEIC","C++","Java of Definition"];
+```
