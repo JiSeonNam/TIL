@@ -48,7 +48,7 @@ test()를 호출했을 경우, 아래와 같이 출력된다. 이는 변수 Hois
 undefined
 2
 ```
-
+<br>
 
 ## 변수 Hoisting
 Hoisting이란 var를 사용하여 변수를 선언할 때, 해당 변수가 속한 범위(scope)를 최상단으로 올려버리는 현상을 말한다. 
@@ -66,6 +66,8 @@ test();
 ```
 
 [[참고] var를 사용할 때 발생하는 문제들](https://www.daleseo.com/js-var-issues/)
+<br>
+<br>
 
 
 ## 데이터타입(Data Type)
@@ -105,6 +107,8 @@ const height = 163.2;
 const age = 33;
 ```
 
+<br>
+
 ## 데이터타입 정렬하기(Organizing Data with Arrays)
 #### Array
 데이터를 List처럼 저장하는 것으로, 여러 String을 묶어서 사용한다. DB에서 가져온 List 데이터의 경우 주로 사용한다. 
@@ -138,6 +142,7 @@ console.log(Info.favMovies[1]); //FrisonBreak
 console.log(Info.favFood[0]); //{ name: 'Pizza', fatty: true }
 console.log(Info.favFood[0].name); //Pizza
 ```
+<br>
 
 ## Camel Case(카멜케이스)
 낙타 등처럼 중간에 튀어나온 것에 따온 것으로, 글자 중간에 대문자를 이용하여 알아보기 쉽게 나타내는 것을 말한다. 기본적으로 변수는 띄어쓰기와 특수문자를 사용할 수 없으므로, 대문자를 이용한다.
