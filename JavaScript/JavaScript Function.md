@@ -115,15 +115,15 @@ document도 Object임을 알 수 있으며, document를 대표하는 HTML을 보
 ![화면 캡처 2021-02-06 233052](https://user-images.githubusercontent.com/71870567/107121002-6a8dd400-68d3-11eb-8573-996a8721f41b.png)
 
 JavaScript는 HTML에 있는 모든 요소를 가지고 와서 Object로 만든다. 따라서 모든 HTML은 Object가 될 수 있다. 
-우리가 찾게되는 모든 Object의 함수를 DOM(Document Object Module) 형태로 변경할 수 있다.
+모든 Object의 함수를 DOM(Document Object Module) 형태로 변경할 수 있다.
 
 
 ```
 <h1 id="title">이것은 타이틀</h1>
 <script>
   const title = document.getElementById("title"); 
-  title.innerHTML = "change the title"; //title 내용을 바꾼다
-  title.style.color = "red"; //title의 컬러가 바뀐다. 
+  title.innerHTML = "change the title"; //title 내용을 바꾼다.
+  title.style.color = "red"; //title의 컬러를 바꾼다.
 </script>
 ```
 
