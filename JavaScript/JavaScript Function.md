@@ -134,6 +134,164 @@ console.dir(title);
 ```
 ![화면 캡처 2021-02-06 234642](https://user-images.githubusercontent.com/71870567/107121410-97db8180-68d5-11eb-9f7f-c4551f6783b5.png)
 
+<br>
+
+# Events and EventHandlers
+JavaScript는 HTML과 CSS를 바꾸는 기능을 수행하지만 본래 Event에 반응하기 위해 만들어졌다. 여기서 말하는 Event란 웹사이트에서 발생하는 것들을 말한다. JavaScript는 이벤트를 중간에 가로챌 수 있다.
+
+### Event 종류
+- click
+- resize
+- submit
+- input
+- change
+- load
+- before
+- closing
+- printing
+
+addEventListener() 메서드는 지정한 이벤트가 대상(target)에 전달될 때마다 호출 할 함수를 설정한다. target은 일반적으로 Element, Document, Window가 있다. 함수를 호출할 때는 함수명으로만 호출한다. 만약, 함수명()으로 호출할 경우, 이벤트와 상관없이 함수가 바로 호출된다.
+
+예) window resize 이벤트
+```
+function handleResize(){
+  console.log("브라우저 사이즈 변경!");
+}
+window.addEventListener("resize", handleResize); //window 화면 사이즈를 바꿀 때, handleResize 함수 호출
+window.addEventListener("resize", handleResize()); //handleResize 함수를 자동 호출
+```
+
+예) window event 매개변수
+event 매개변수는 JavaScript로부터 온 것으로, 이벤트를 다룰 함수를 만들 때마다 JavaScript는 자동적으로 함수를 객체에 붙인다. 이벤트가 발생할 때마다 이벤트 객체가 호출된다.
+```
+function handleResize(event){
+  console.log(event);
+}
+window.addEventListener("resize", handleResize); //window 화면 사이즈를 바꿀 때, handleResize 함수 호출
+```
+
+예) DOM과 조건문
+JavaScript에서는 RGB 형식으로만 색상을 바꿀 수 있으며, #색상표는 지원하지 않는다. 
+```
+[index.html]
+<html>
+  <head>
+    <title>Sample</title>
+    <link rel="stylesheet" href="index.css"/>
+  </head>
+  <body>
+    <h1 id="title">이것은 타이틀</h1>
+    <script src="index.js"></script>
+  </body>
+</html>
+
+[index.js]
+const title = document.querySelector("#title");
+const BASE_COLOR = "rgb(52, 73, 94)"; //RGB 스타일
+//const BASE_COLOR = "#800000"; //#스타일, 바꿔지지않음
+const OTHER_COLOR = "#7f8c8d";
+
+function handleClick(){
+    const currentColor = title.style.color;
+   
+    if(currentColor === BASE_COLOR){
+        title.style.color = OTHER_COLOR; //색상 바꾸기
+        console.log(currentColor); //타이틀 색상을 console.log에 표기
+    }else{
+        title.style.color = BASE_COLOR; //원래 색상으로 바꾸기
+        console.log(currentColor); //타이틀 색상을 console.log에 표기
+    }
+}
+
+//애플리케이션 초기화
+function init(){
+  title.style.color = BASE_COLOR;
+  title.addEventListener("click",handleClick); //클릭했을 때, handleClick 함수를 실행
+}
+init();
+```
+
+예) online, offline event 확인하기
+![화면 캡처 2021-02-07 133701](https://user-images.githubusercontent.com/71870567/107137854-c26c1f80-6953-11eb-94fb-88395c971901.png)
+```
+const currentWifi = () => {
+    console.log(navigator.onLine ? "online" : "offline");
+}
+window.addEventListener("online", currentWifi);
+window.addEventListener("offline", currentWifi); 
+currentWifi();
+```
+
+예) HTML, CSS, JS 역할 분리하기 - classList 이용하기
+- classList : Element.classList는 element 클래스의 읽기전용 property를 의미하며, className을 통해 접근하는 방식을 대체한 간편한 방식이다.
+  - classList.add(String) : 지정한 클래스 값을 추가한다.
+  - classList.remove(String) : 지정한 클래스 값을 제거한다. 존재하지 않는 클래스를 제거할 때 에러가 발생하지 않는다.
+  - classList.contains(String) : 지정한 클래스 값이 엘리먼트의 class 속성에 존재하는지 true/false로 확인한다.
+```
+[index.html]
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sample</title>
+    <link rel="stylesheet" href="index.css"/>
+  </head>
+  <body>
+    <h1 id="title" class="btn">이것은 타이틀</h1>
+    <script src="index.js"></script>
+  </body>
+</html>
+
+[index.js]
+const title = document.querySelector("#title");
+const CLICKED_CLASS = "clicked";
+
+//클릭했을 때, class 이름 바꾸기 
+function handleClick(){
+    //1.if-else로 바꾸기
+    const hasClass = title.classList.contains(CLICKED_CLASS); //true,false로 반환
+    
+    if(!hasClass){
+      title.classList.add(CLICKED_CLASS);
+    } else {
+      title.classList.remove(CLICKED_CLASS);
+    }   
+}
+
+function init(){
+    title.addEventListener("click",handleClick); //클릭했을 때, handleClick 함수를 실행
+}
+init();
+
+[index.css]
+body{
+    background-color:#ecf0f1;
+}
+.btn{
+    cursor:pointer;
+}
+h1{
+    color:#34495e;
+    transition: color 0.5s ease-in-out;
+}
+.clicked{
+    color:#7f8c8d;
+}
+```
+
+예) HTML, CSS, JS 역할 분리하기 - classList.toggle 이용해 간단하게 표현하기
+위의 예처럼 if-else를 이용해서 class를 추가하고 제거할 수 있지만, toggle을 이용해 좀 더 간단하게 표현할 수 있다. 
+- classList.toggle(String [, force])
+  - 하나의 인수만 있을 경우 : class가 존재하면 제거하고 false 반환, 존재하지 않으면 class를 추가하고 true를 반환
+  - 두 번째 인수가 있을 경우 : 두 번째 인수가 true로 나오면 class를 추가하고, false로 나오면 제거한다.
+  
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/71870567/107143717-fe19e000-6979-11eb-9605-6053df3e01a1.gif)
+
+```
+function handleClick(){
+   title.classList.toggle(CLICKED_CLASS);
+}
+```
+
 
 
 
