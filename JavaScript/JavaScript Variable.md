@@ -136,12 +136,13 @@ const Info = {
   favMovies:["AirForceOne","FrisonBreak"],
   favFood:[{name:"Pizza",fatty:true},{name:"Kimchizzun",fatty:false}]
 }
-console.log(Info);
+console.log(Info); 
 console.log(Info.name); //namjiseon
 console.log(Info.favMovies[1]); //FrisonBreak
 console.log(Info.favFood[0]); //{ name: 'Pizza', fatty: true }
 console.log(Info.favFood[0].name); //Pizza
 ```
+![화면 캡처 2021-02-11 223334](https://user-images.githubusercontent.com/71870567/107643238-3a6e7880-6cb9-11eb-8e23-e94804b372ae.png)
 <br>
 
 # Camel Case(카멜케이스)
