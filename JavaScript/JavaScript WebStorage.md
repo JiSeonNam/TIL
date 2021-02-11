@@ -31,13 +31,15 @@
 웹스토리지는 기본적으로 키(key), 값(value)의 형식으로 이루어진 데이터로 저장된다.
 window.localStorage/window.sessionStorage로 사용할 수 있으며, window를 생략한 localStorage/sessionStorage로 사용가능하다.
 
-- 데이터 추가
+- 데이터 추가<br>
+*주의점 : 해당 key값이 이미 있을경우에는 중복저장이 되는것이 아니라 업데이트를 한다.*
 ```
 //3가지 방법을 이용해 데이터를 추가할 수 있다.
 localStorage.key값 = "value값";
 localStorage["key값"] = "value값";
 localStorage.setItem("key값", "value값");
 ```
+![화면 캡처 2021-02-11 175146](https://user-images.githubusercontent.com/71870567/107616669-e00df180-6c91-11eb-9947-9517b7b46950.png)
 
 - 데이터 읽기
 
