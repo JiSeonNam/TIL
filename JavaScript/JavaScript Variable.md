@@ -124,26 +124,46 @@ console.log(daysOfWeek[234]); //undefined, Array에 정의되지 않는 데이�
 ```
 
 ### Object
-Array와 다른점은 각 value에 이름을 지정할 수 있다. 만약 데이터를 합쳐서 만들어야 할 경우, Object를 이용해 만든 뒤 Array에 넣어서 사용할 수 있다.
+JavaScript는 객체(Object) 기반 스크립트 언어로 원시 타입(Number, boolean, null, undefined)를 제외한 나머지 값(함수, 배열, 정규표현식 등)은 모두 객체로 불린다. 객체는 키(key), 값(value)으로 구성된 프로퍼티(property)들의 집합이다. 객체는 객체 리터럴과 생성자로 객체를 만들 수 있다.
+
+#### 1. 객체 리터럴
+JavaScript는 객체 리터럴로 객체를 생성할 경우, 내부적으로 Object 생성자 함수를 사용하여 객체를 생성한다. Array와 다른점은 각 value에 이름을 지정할 수 있다. 만약 데이터를 합쳐서 만들어야 할 경우, Object를 이용해 만든 뒤 Array에 넣어서 사용할 수 있다.
 - 타입 : String, Boolean, float, Number 사용 가능
-- 데이터 넣는 방법 : 데이터를 {} 부호로 감싼다. 여러 데이터를 넣을 경우 반드시 ,(콤마)를 확인하고, String 데이터형은 " "로 감싼다.
+- 데이터 생성 방법 : 중괄호({})를 사용해 객체를 생성하며, 여러 데이터를 넣을 경우 반드시 ,(콤마)를 넣는다. String 데이터형은 "" 또는 ''로 감싼다. 중괄호 내에 아무것도 기술하지 않을 경우 빈 객체가 생성된다.
 - 데이터 접근 방법 : 변수명.key값[index번호].key값...
 ```
-const Info = {
-  name:"namjiseon",
-  age:34,
-  gender:"female",
-  favMovies:["AirForceOne","FrisonBreak"],
-  favFood:[{name:"Pizza",fatty:true},{name:"Kimchizzun",fatty:false}]
+let emptyObj = {};
+console.log(emptyObj); //{}
+console.log(typeof emptyObj); //object
+
+let person = {
+  name: 'Nam',
+  gender: 'female',
+  favMovies: ["AirForceOne","FrisonBreak"],
+  favFood: [{name:"Pizza",fatty:true},{name:"Kimchizzun",fatty:false}]
 }
-console.log(Info); 
-console.log(Info.name); //namjiseon
-console.log(Info.favMovies[1]); //FrisonBreak
-console.log(Info.favFood[0]); //{ name: 'Pizza', fatty: true }
-console.log(Info.favFood[0].name); //Pizza
+console.log(person); //{name: "Nam", gender: "female", favMovies: Array(2), favFood: Array(2)}
+console.log(person.name); //Nam
+console.log(person.favMovies[1]); //FrisonBreak
+console.log(person.favFood[0]); //{ name: 'Pizza', fatty: true }
+console.log(person.favFood[0].name); //Pizza
 ```
-![화면 캡처 2021-02-11 223334](https://user-images.githubusercontent.com/71870567/107643238-3a6e7880-6cb9-11eb-8e23-e94804b372ae.png)
+
+#### 2. 생성자(Constructor)
+Java에서 객체를 생성하는 방법과 유사하며 new 연산자와 Object 생성자 함수를 호출하여 빈 객첼르 생성할 수 있다. 생성자 함수는 객체를 생성하고 초기화하는 함수를 뜻한다. JavaScript는 생성자 함수 외에도 String, Number, Boolean, Array, Date, RegExp 등의 빌트인 생성자 함수를 제공한다. 일반함수와 구별짓기 위해 파스칼케이스(PascalCase)를 사용하는 것이 일반적이다.
+
+```
+function Person(){}; //함수 구별을 위해 파스칼케이스 이용
+const person = new Person();
+person.name = 'Nam';
+person.gender = 'female',
+person.favMovies = ["AirForceOne","FrisonBreak"];
+person.favFood = [{name:"Pizza",fatty:true},{name:"Kimchizzun",fatty:false}];
+console.log(person); //Person {name: "Nam", gender: "female", favMovies: Array(2), favFood: Array(2)}
+```
 <br>
+
+
 
 # Camel Case(카멜케이스)
 낙타 등처럼 중간에 튀어나온 것에 따온 것으로, 글자 중간에 대문자를 이용하여 알아보기 쉽게 나타내는 것을 말한다. 기본적으로 변수는 띄어쓰기와 특수문자를 사용할 수 없으므로, 대문자를 이용한다.
