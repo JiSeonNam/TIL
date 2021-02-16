@@ -5,5 +5,5 @@
 - 찾아보기 쉽도록 링크를 첨부한다.
 - [참고했던 TIL 깃주소](https://github.com/qlalzl9/TIL)
 
-## JavaScript
-- [JavaScript를 왜 배워야 하는가?](https://github.com/JiSeonNam/TIL/blob/main/JavaScript/JavaScript%20Definition.md)
+### JavaScript
+### Java
